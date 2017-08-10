@@ -18,16 +18,17 @@ public class Replacer {
         //int trocas=0;
         String txtInicial=new br.TxtReader().Reader(txtFile);
         vfinal=txtInicial;
-        java.util.ArrayList<String[]> kw = new br.CsvReader().Reader("/Users/alexandrelerario/Desktop/a/CSVmergeTXT/CsvInTxt/src/relac.csv", ";");
+        java.util.ArrayList<String[]> kw = new br.CsvReader().Reader(csvFile, separator);
       
         for (String[] strings : kw) {
             
             //vfinal.replaceAll(strings[0], "zz "+ strings[1]);
+            System.out.println("Subst: " + strings[0]);
             CharSequence c1, c2;
             c1 = strings[0];
             c2 = strings[1];
             vfinal = vfinal.replace(c1, c2);
-        
+            
                       
             //trocas++;
         }
